@@ -1,0 +1,15 @@
+<div class="row">
+  <form [formGroup]="botForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="input">Say something</label>
+      <input type="text" name="input" formControlName="input" id="input" class="form-control" value="{{isSpeech ? speechMessage : ''}}" />
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<div>{{botResponse}}</div>
+<button (click)="onListen()">Listen</button>
+<hr />
+<div class="row" *ngIf="isPicture">
+  <img class="img-fluid" src="https://i.imgur.com/UFTLz7J.jpg" alt="Alternate Text" />
+</div>
